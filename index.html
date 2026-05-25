@@ -1,0 +1,1563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cyber Defence Intelligence - Best Cyber Security Company India | Expert Vulnerability Assessment & Penetration Testing Services">
+    <meta name="keywords" content="cyber security, penetration testing, VAPT, ethical hacking, OWASP, vulnerability assessment, India">
+    <meta name="author" content="Cyber Defence Intelligence">
+    <title>Cyber Defence Intelligence | Best Cyber Security Company India</title>
+    
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- FontAwesome 6.4 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <!-- Google Fonts - Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-dark: #0a1128;
+            --secondary-dark: #1c2541;
+            --light-bg: #f4f5f7;
+            --white: #ffffff;
+            --accent-blue: #00b4d8;
+            --warning-red: #e63946;
+            --text-muted: #9ca3af;
+            --gradient-cyber: linear-gradient(135deg, #0a1128 0%, #1c2541 50%, #0a1128 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-bg);
+            color: #333;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--primary-dark);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-blue);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0096c7;
+        }
+
+        /* Navigation Bar */
+        .navbar-custom {
+            background: var(--gradient-cyber);
+            padding: 1rem 0;
+            box-shadow: 0 4px 20px rgba(0, 180, 216, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .navbar-custom.scrolled {
+            padding: 0.5rem 0;
+            box-shadow: 0 6px 30px rgba(0, 180, 216, 0.3);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--white) !important;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand i {
+            color: var(--accent-blue);
+            font-size: 1.8rem;
+        }
+
+        .navbar-brand:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-link {
+            color: var(--white) !important;
+            font-weight: 500;
+            margin: 0 0.5rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--accent-blue);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 80%;
+        }
+
+        .nav-link:hover {
+            color: var(--accent-blue) !important;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: var(--gradient-cyber);
+            color: var(--white);
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%2300b4d8" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,138.7C960,139,1056,117,1152,112C1248,107,1344,117,1392,122.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+            background-size: cover;
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: fadeInDown 1s ease;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            color: var(--light-bg);
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+
+        .cta-button {
+            background: var(--accent-blue);
+            color: var(--white);
+            border: none;
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            box-shadow: 0 8px 25px rgba(0, 180, 216, 0.4);
+            transition: all 0.3s ease;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .cta-button:hover {
+            background: #0096c7;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(0, 180, 216, 0.6);
+        }
+
+        /* Statistics Cards */
+        .stats-section {
+            margin-top: 3rem;
+            animation: fadeInUp 1s ease 0.9s both;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            height: 100%;
+            margin-bottom: 1.5rem;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 15px 40px rgba(0, 180, 216, 0.3);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent-blue);
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 10px rgba(0, 180, 216, 0.5);
+        }
+
+        .stat-text {
+            font-size: 1rem;
+            color: var(--white);
+            line-height: 1.5;
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--accent-blue);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+        }
+
+        /* Service Cards */
+        .service-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            border: 2px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 180, 216, 0.2);
+            border-color: var(--accent-blue);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--accent-blue), #0096c7);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 8px 20px rgba(0, 180, 216, 0.3);
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+        }
+
+        .service-description {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .service-list li {
+            padding: 0.5rem 0;
+            color: #555;
+            display: flex;
+            align-items: center;
+        }
+
+        .service-list li i {
+            color: var(--accent-blue);
+            margin-right: 0.75rem;
+            font-size: 1.1rem;
+        }
+
+        /* Training Section */
+        .training-section {
+            background: var(--secondary-dark);
+            color: var(--white);
+        }
+
+        .training-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .training-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 180, 216, 0.2);
+        }
+
+        .training-icon {
+            font-size: 3rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+        }
+
+        .training-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .training-description {
+            color: var(--light-bg);
+            line-height: 1.8;
+        }
+
+        /* Blog Section */
+        .blog-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .blog-header {
+            background: linear-gradient(135deg, var(--primary-dark), var(--secondary-dark));
+            color: var(--white);
+            padding: 1.5rem;
+        }
+
+        .blog-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            color: var(--light-bg);
+            margin-top: 1rem;
+        }
+
+        .blog-meta i {
+            margin-right: 0.3rem;
+            color: var(--accent-blue);
+        }
+
+        .blog-body {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-excerpt {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .blog-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .blog-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .blog-action-btn {
+            background: transparent;
+            border: none;
+            color: #666;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .blog-action-btn:hover {
+            color: var(--accent-blue);
+            transform: scale(1.1);
+        }
+
+        .blog-action-btn.liked {
+            color: var(--warning-red);
+        }
+
+        .blog-action-btn.disliked {
+            color: var(--warning-red);
+        }
+
+        .view-count {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .view-count i {
+            color: var(--accent-blue);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--gradient-cyber);
+            color: var(--white);
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--accent-blue);
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: var(--light-bg);
+            line-height: 1.8;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent-blue);
+            padding-left: 5px;
+        }
+
+        .footer-section i {
+            color: var(--accent-blue);
+            margin-right: 0.5rem;
+            width: 20px;
+        }
+
+        .hotline {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-blue);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .hotline i {
+            animation: pulse 2s infinite;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1.5rem;
+            text-align: center;
+            color: var(--light-bg);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--accent-blue);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 180, 216, 0.4);
+        }
+
+        /* Modal Styling */
+        .modal-content {
+            border-radius: 15px;
+            border: none;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal-header {
+            background: var(--gradient-cyber);
+            color: var(--white);
+            border-radius: 15px 15px 0 0;
+            border: none;
+        }
+
+        .modal-title {
+            font-weight: 600;
+        }
+
+        .btn-close {
+            filter: brightness(0) invert(1);
+        }
+
+        .form-control:focus,
+        .form-select:focus {
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 0 0.2rem rgba(0, 180, 216, 0.25);
+        }
+
+        .btn-primary-custom {
+            background: var(--accent-blue);
+            border: none;
+            padding: 0.75rem 2rem;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary-custom:hover {
+            background: #0096c7;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 180, 216, 0.4);
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .navbar-brand {
+                font-size: 1.2rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Utility Classes */
+        .text-accent {
+            color: var(--accent-blue);
+        }
+
+        .bg-dark-custom {
+            background: var(--primary-dark);
+        }
+
+        .badge-custom {
+            background: var(--accent-blue);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 500;
+        }
+
+        .alert-custom {
+            background: rgba(230, 57, 70, 0.1);
+            border-left: 4px solid var(--warning-red);
+            color: var(--warning-red);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-shield-halved"></i>
+                Cyber Defence Intelligence
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#training">Training</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#updates">Security Updates</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="container">
+            <div class="hero-content text-center">
+                <h1 class="hero-title">Cyber Defence Intelligence Consulting</h1>
+                <p class="hero-subtitle">
+                    Best Cyber Security Company India | Expert Vulnerability Assessment & Penetration Testing
+                </p>
+                <button class="btn cta-button" data-bs-toggle="modal" data-bs-target="#contactModal">
+                    <i class="fas fa-user-shield me-2"></i>
+                    Hire Security Professionals in 2 Minutes
+                </button>
+
+                <!-- Statistics Section -->
+                <div class="stats-section">
+                    <div class="row g-4">
+                        <div class="col-lg-3 col-md-6">
+                            <div class="stat-card">
+                                <div class="stat-number">70%</div>
+                                <div class="stat-text">
+                                    Of vulnerabilities exist at the Application Layer, not the network
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="stat-card">
+                                <div class="stat-number">30,000+</div>
+                                <div class="stat-text">
+                                    Websites are hacked every single day to distribute malware
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="stat-card">
+                                <div class="stat-number">96%</div>
+                                <div class="stat-text">
+                                    Of tested enterprise applications contain vulnerabilities
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="stat-card">
+                                <div class="stat-number">86%</div>
+                                <div class="stat-text">
+                                    Of all websites have at least one serious security loophole
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section" id="services">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Our Security Auditing Capabilities</h2>
+                <p class="section-subtitle">
+                    Comprehensive penetration testing and vulnerability assessment services
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-12">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3 class="service-title">Web Application Penetration Testing (WAP)</h3>
+                        <p class="service-description">
+                            Our Web Application Penetration Testing service provides a thorough and systematic evaluation 
+                            of your web applications to identify security vulnerabilities before malicious actors can exploit them. 
+                            We go beyond automated scanning to understand the unique business logic and architecture of your applications.
+                        </p>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5 class="text-accent mb-3">
+                                    <i class="fas fa-bullseye me-2"></i>What We Test
+                                </h5>
+                                <ul class="service-list">
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <strong>OWASP Top 10 Vulnerabilities:</strong> Complete assessment of critical web application security risks including injection flaws, broken authentication, XSS, and more
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <strong>SANS Top 20 Critical Controls:</strong> Evaluation against industry-standard security controls and best practices
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <strong>Business Logic Flaws:</strong> Identification of vulnerabilities in application workflows that could lead to unauthorized access, data manipulation, or financial fraud
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <strong>Authentication & Authorization:</strong> Testing of user access controls, session management, and privilege escalation vulnerabilities
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h5 class="text-accent mb-3">
+                                    <i class="fas fa-cogs me-2"></i>Our Methodology
+                                </h5>
+                                <ul class="service-list">
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <strong>Reconnaissance:</strong> Information gathering and mapping application architecture
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <strong>Vulnerability Scanning:</strong> Automated and manual identification of exploitable loopholes
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <strong>Exploitation:</strong> Controlled attempts to exploit discovered vulnerabilities
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <strong>Reporting:</strong> Detailed documentation with remediation recommendations and risk ratings
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <strong>Organizational Impact Analysis:</strong> Direct evaluation of how vulnerabilities affect your business workflows and operations
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="alert-custom mt-4">
+                            <i class="fas fa-exclamation-triangle me-2"></i>
+                            <strong>Critical:</strong> Unpatched vulnerabilities in web applications are the leading cause of data breaches. 
+                            Regular penetration testing is essential for maintaining a strong security posture.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training Section -->
+    <section class="section training-section" id="training">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title text-white">Cyber Security & Ethical Hacking Trainings</h2>
+                <p class="section-subtitle text-white-50">
+                    Industry-leading training programs designed to create cybersecurity professionals
+                </p>
+            </div>
+
+            <div class="row g-4 mb-5">
+                <div class="col-lg-4 col-md-6">
+                    <div class="training-card text-center">
+                        <div class="training-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h4 class="training-title">Beginner to Expert Path</h4>
+                        <p class="training-description">
+                            Customized curriculum designed to take you from zero knowledge to industry-ready professional. 
+                            Our structured approach answers the biggest question: "Where and how to start?"
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="training-card text-center">
+                        <div class="training-icon">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <h4 class="training-title">Hands-On Technical Push</h4>
+                        <p class="training-description">
+                            Real-world scenarios, live hacking labs, and practical exercises. 
+                            Learn by doing with access to our custom-built vulnerable applications and networks.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="training-card text-center">
+                        <div class="training-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h4 class="training-title">Market Niche Creation</h4>
+                        <p class="training-description">
+                            Gain specialized skills that make you stand out in the competitive cybersecurity marketplace. 
+                            Our training focuses on emerging threats and cutting-edge defensive techniques.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="service-card">
+                        <h4 class="service-title text-center mb-4">
+                            <i class="fas fa-book-open me-2"></i>Course Offerings
+                        </h4>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-start">
+                                    <i class="fas fa-certificate text-accent me-3 mt-1" style="font-size: 1.2rem;"></i>
+                                    <div>
+                                        <strong>Certified Ethical Hacker (CEH)</strong>
+                                        <p class="mb-0 text-muted small">Industry-recognized certification preparation</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-start">
+                                    <i class="fas fa-certificate text-accent me-3 mt-1" style="font-size: 1.2rem;"></i>
+                                    <div>
+                                        <strong>Web Application Security</strong>
+                                        <p class="mb-0 text-muted small">OWASP Top 10 and advanced exploitation</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-start">
+                                    <i class="fas fa-certificate text-accent me-3 mt-1" style="font-size: 1.2rem;"></i>
+                                    <div>
+                                        <strong>Network Penetration Testing</strong>
+                                        <p class="mb-0 text-muted small">Infrastructure security assessment</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-start">
+                                    <i class="fas fa-certificate text-accent me-3 mt-1" style="font-size: 1.2rem;"></i>
+                                    <div>
+                                        <strong>Digital Forensics & Incident Response</strong>
+                                        <p class="mb-0 text-muted small">Investigation and breach analysis</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center mt-4">
+                            <button class="btn btn-primary-custom" data-bs-toggle="modal" data-bs-target="#brochureModal">
+                                <i class="fas fa-download me-2"></i>Download Course Brochure
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Security Updates Section -->
+    <section class="section" id="updates">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Latest Security Updates & Blog Feed</h2>
+                <p class="section-subtitle">
+                    Stay informed about the latest vulnerabilities, exploits, and security research
+                </p>
+            </div>
+
+            <div class="row g-4" id="blogContainer">
+                <!-- Blog Post 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="blog-card">
+                        <div class="blog-header">
+                            <h4 class="blog-title">GhostScript Bug! Allowing Remote Code Execution</h4>
+                            <div class="blog-meta">
+                                <span>
+                                    <i class="fas fa-user"></i>
+                                    News CDI
+                                </span>
+                                <span>
+                                    <i class="fas fa-calendar"></i>
+                                    Aug 23, 2018
+                                </span>
+                            </div>
+                        </div>
+                        <div class="blog-body">
+                            <p class="blog-excerpt">
+                                A critical vulnerability has been discovered in GhostScript that allows remote attackers to execute arbitrary code. 
+                                The flaw affects multiple versions and could be exploited through malicious PostScript and PDF files. 
+                                Immediate patching is recommended for all affected systems.
+                            </p>
+                            <div class="blog-footer">
+                                <div class="blog-actions">
+                                    <button class="blog-action-btn like-btn" data-post="1">
+                                        <i class="far fa-thumbs-up"></i>
+                                        <span class="like-count">0</span>
+                                    </button>
+                                    <button class="blog-action-btn dislike-btn" data-post="1">
+                                        <i class="far fa-thumbs-down"></i>
+                                        <span class="dislike-count">0</span>
+                                    </button>
+                                </div>
+                                <div class="view-count">
+                                    <i class="fas fa-eye"></i>
+                                    <span class="views" data-views="437">437</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Post 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="blog-card">
+                        <div class="blog-header">
+                            <h4 class="blog-title">JavaScript Web Server and Apps Vulnerabilities</h4>
+                            <div class="blog-meta">
+                                <span>
+                                    <i class="fas fa-user"></i>
+                                    News CDI
+                                </span>
+                                <span>
+                                    <i class="fas fa-calendar"></i>
+                                    Aug 20, 2018
+                                </span>
+                            </div>
+                        </div>
+                        <div class="blog-body">
+                            <p class="blog-excerpt">
+                                Recent analysis reveals multiple critical vulnerabilities in popular JavaScript-based web servers and applications. 
+                                Node.js and Express.js applications are particularly at risk. Security researchers recommend implementing proper input validation, 
+                                using security headers, and keeping dependencies up-to-date.
+                            </p>
+                            <div class="blog-footer">
+                                <div class="blog-actions">
+                                    <button class="blog-action-btn like-btn" data-post="2">
+                                        <i class="far fa-thumbs-up"></i>
+                                        <span class="like-count">0</span>
+                                    </button>
+                                    <button class="blog-action-btn dislike-btn" data-post="2">
+                                        <i class="far fa-thumbs-down"></i>
+                                        <span class="dislike-count">0</span>
+                                    </button>
+                                </div>
+                                <div class="view-count">
+                                    <i class="fas fa-eye"></i>
+                                    <span class="views" data-views="388">388</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Post 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="blog-card">
+                        <div class="blog-header">
+                            <h4 class="blog-title">How To Make Metasploit Payload (Venom)</h4>
+                            <div class="blog-meta">
+                                <span>
+                                    <i class="fas fa-user"></i>
+                                    Mridul Sharma
+                                </span>
+                                <span>
+                                    <i class="fas fa-calendar"></i>
+                                    Sep 11, 2017
+                                </span>
+                            </div>
+                        </div>
+                        <div class="blog-body">
+                            <p class="blog-excerpt">
+                                A comprehensive tutorial on creating advanced Metasploit payloads using Venom. This guide covers payload generation, 
+                                encoding techniques, and evasion methods for penetration testing scenarios. Learn how to craft undetectable payloads for 
+                                authorized security assessments and red team operations.
+                            </p>
+                            <div class="blog-footer">
+                                <div class="blog-actions">
+                                    <button class="blog-action-btn like-btn" data-post="3">
+                                        <i class="far fa-thumbs-up"></i>
+                                        <span class="like-count">0</span>
+                                    </button>
+                                    <button class="blog-action-btn dislike-btn" data-post="3">
+                                        <i class="far fa-thumbs-down"></i>
+                                        <span class="dislike-count">0</span>
+                                    </button>
+                                </div>
+                                <div class="view-count">
+                                    <i class="fas fa-eye"></i>
+                                    <span class="views" data-views="1016">1016</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Company Info -->
+                <div class="footer-section">
+                    <h4>
+                        <i class="fas fa-shield-halved me-2"></i>
+                        Cyber Defence Intelligence
+                    </h4>
+                    <p>
+                        Leading cybersecurity consulting firm specializing in penetration testing, vulnerability assessment, 
+                        and security training. Protecting organizations from evolving cyber threats since 2010.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="#services">
+                        <i class="fas fa-chevron-right"></i>
+                        Services
+                    </a>
+                    <a href="#training">
+                        <i class="fas fa-chevron-right"></i>
+                        Training Programs
+                    </a>
+                    <a href="#updates">
+                        <i class="fas fa-chevron-right"></i>
+                        Security Blog
+                    </a>
+                    <a href="#">
+                        <i class="fas fa-chevron-right"></i>
+                        Privacy Policy
+                    </a>
+                    <a href="#">
+                        <i class="fas fa-chevron-right"></i>
+                        Terms of Service
+                    </a>
+                </div>
+
+                <!-- Services -->
+                <div class="footer-section">
+                    <h4>Our Services</h4>
+                    <a href="#">
+                        <i class="fas fa-chevron-right"></i>
+                        Web Application Pentesting
+                    </a>
+                    <a href="#">
+                        <i class="fas fa-chevron-right"></i>
+                        Network Security Assessment
+                    </a>
+                    <a href="#">
+                        <i class="fas fa-chevron-right"></i>
+                        Mobile App Security
+                    </a>
+                    <a href="#">
+                        <i class="fas fa-chevron-right"></i>
+                        Cloud Security Audit
+                    </a>
+                    <a href="#">
+                        <i class="fas fa-chevron-right"></i>
+                        Security Training
+                    </a>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <p>
+                        <i class="fas fa-map-marker-alt"></i>
+                        Sector 34, Chandigarh, India
+                    </p>
+                    <p>
+                        <i class="fas fa-envelope"></i>
+                        info@cyberdefenceintelligence.in
+                    </p>
+                    <div class="hotline mt-3">
+                        <i class="fas fa-phone-volume"></i>
+                        +91-771045-0011
+                    </div>
+                    <p class="mt-2" style="font-size: 0.9rem;">
+                        <i class="fas fa-clock"></i>
+                        Mon - Sat: 9:00 AM - 6:00 PM
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>
+                    &copy; 2024 Cyber Defence Intelligence Consulting. All Rights Reserved. | 
+                    Registered in India | ISO 27001 Certified
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Contact Modal -->
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="contactModalLabel">
+                        <i class="fas fa-user-shield me-2"></i>
+                        Hire Security Professionals
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="contactForm">
+                        <div class="mb-3">
+                            <label for="fullName" class="form-label">Full Name *</label>
+                            <input type="text" class="form-control" id="fullName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email Address *</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone Number *</label>
+                            <input type="tel" class="form-control" id="phone" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="company" class="form-label">Company Name</label>
+                            <input type="text" class="form-control" id="company">
+                        </div>
+                        <div class="mb-3">
+                            <label for="service" class="form-label">Service Required *</label>
+                            <select class="form-select" id="service" required>
+                                <option value="">Select a service</option>
+                                <option value="web-pentest">Web Application Penetration Testing</option>
+                                <option value="network-assessment">Network Security Assessment</option>
+                                <option value="mobile-security">Mobile App Security</option>
+                                <option value="cloud-security">Cloud Security Audit</option>
+                                <option value="training">Security Training</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary-custom w-100">
+                            Submit Request
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Brochure Modal -->
+    <div class="modal fade" id="brochureModal" tabindex="-1" aria-labelledby="brochureModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="brochureModalLabel">
+                        <i class="fas fa-download me-2"></i>
+                        Download Course Brochure
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="brochureForm">
+                        <div class="mb-3">
+                            <label for="brochureName" class="form-label">Full Name *</label>
+                            <input type="text" class="form-control" id="brochureName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="brochureEmail" class="form-label">Email Address *</label>
+                            <input type="email" class="form-control" id="brochureEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="brochurePhone" class="form-label">Phone Number *</label>
+                            <input type="tel" class="form-control" id="brochurePhone" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="courseInterest" class="form-label">Course of Interest *</label>
+                            <select class="form-select" id="courseInterest" required>
+                                <option value="">Select a course</option>
+                                <option value="ceh">Certified Ethical Hacker (CEH)</option>
+                                <option value="web-security">Web Application Security</option>
+                                <option value="network-pentest">Network Penetration Testing</option>
+                                <option value="forensics">Digital Forensics & Incident Response</option>
+                                <option value="all">All Courses</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary-custom w-100">
+                            Download Brochure
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5.3 Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar-custom');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Active nav link on scroll
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth scrolling for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 70;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile navbar after click
+                    const navbarCollapse = document.querySelector('.navbar-collapse');
+                    if (navbarCollapse.classList.contains('show')) {
+                        navbarCollapse.classList.remove('show');
+                    }
+                }
+            });
+        });
+
+        // Blog interaction functionality
+        const blogPosts = {
+            1: { likes: 0, dislikes: 0, views: 437, userAction: null },
+            2: { likes: 0, dislikes: 0, views: 388, userAction: null },
+            3: { likes: 0, dislikes: 0, views: 1016, userAction: null }
+        };
+
+        // Like button functionality
+        document.querySelectorAll('.like-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const postId = this.getAttribute('data-post');
+                const post = blogPosts[postId];
+                const dislikeBtn = document.querySelector(`.dislike-btn[data-post="${postId}"]`);
+                
+                if (post.userAction === 'like') {
+                    // Unlike
+                    post.likes--;
+                    post.userAction = null;
+                    this.classList.remove('liked');
+                    this.querySelector('i').classList.replace('fas', 'far');
+                } else {
+                    if (post.userAction === 'dislike') {
+                        // Remove dislike first
+                        post.dislikes--;
+                        dislikeBtn.classList.remove('disliked');
+                        dislikeBtn.querySelector('i').classList.replace('fas', 'far');
+                    }
+                    // Like
+                    post.likes++;
+                    post.userAction = 'like';
+                    this.classList.add('liked');
+                    this.querySelector('i').classList.replace('far', 'fas');
+                }
+                
+                this.querySelector('.like-count').textContent = post.likes;
+                dislikeBtn.querySelector('.dislike-count').textContent = post.dislikes;
+            });
+        });
+
+        // Dislike button functionality
+        document.querySelectorAll('.dislike-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const postId = this.getAttribute('data-post');
+                const post = blogPosts[postId];
+                const likeBtn = document.querySelector(`.like-btn[data-post="${postId}"]`);
+                
+                if (post.userAction === 'dislike') {
+                    // Un-dislike
+                    post.dislikes--;
+                    post.userAction = null;
+                    this.classList.remove('disliked');
+                    this.querySelector('i').classList.replace('fas', 'far');
+                } else {
+                    if (post.userAction === 'like') {
+                        // Remove like first
+                        post.likes--;
+                        likeBtn.classList.remove('liked');
+                        likeBtn.querySelector('i').classList.replace('fas', 'far');
+                    }
+                    // Dislike
+                    post.dislikes++;
+                    post.userAction = 'dislike';
+                    this.classList.add('disliked');
+                    this.querySelector('i').classList.replace('far', 'fas');
+                }
+                
+                this.querySelector('.dislike-count').textContent = post.dislikes;
+                likeBtn.querySelector('.like-count').textContent = post.likes;
+            });
+        });
+
+        // View counter - increment on card hover
+        document.querySelectorAll('.blog-card').forEach((card, index) => {
+            const postId = index + 1;
+            let hasViewed = false;
+            
+            card.addEventListener('mouseenter', function() {
+                if (!hasViewed) {
+                    const viewSpan = this.querySelector('.views');
+                    const currentViews = parseInt(viewSpan.getAttribute('data-views'));
+                    const newViews = currentViews + 1;
+                    
+                    viewSpan.setAttribute('data-views', newViews);
+                    viewSpan.textContent = newViews;
+                    blogPosts[postId].views = newViews;
+                    hasViewed = true;
+                }
+            });
+        });
+
+        // Contact Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = {
+                name: document.getElementById('fullName').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                company: document.getElementById('company').value,
+                service: document.getElementById('service').value,
+                message: document.getElementById('message').value
+            };
+            
+            // Simulate form submission
+            console.log('Contact Form Submitted:', formData);
+            
+            // Show success message
+            alert('Thank you for your interest! Our security professionals will contact you within 2 hours.');
+            
+            // Close modal and reset form
+            const modal = bootstrap.Modal.getInstance(document.getElementById('contactModal'));
+            modal.hide();
+            this.reset();
+        });
+
+        // Brochure Form Submission
+        document.getElementById('brochureForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = {
+                name: document.getElementById('brochureName').value,
+                email: document.getElementById('brochureEmail').value,
+                phone: document.getElementById('brochurePhone').value,
+                course: document.getElementById('courseInterest').value
+            };
+            
+            // Simulate form submission and download
+            console.log('Brochure Request Submitted:', formData);
+            
+            // Show success message
+            alert('Thank you! The course brochure has been sent to your email address.');
+            
+            // Close modal and reset form
+            const modal = bootstrap.Modal.getInstance(document.getElementById('brochureModal'));
+            modal.hide();
+            this.reset();
+        });
+
+        // Stats counter animation
+        function animateCounter(element, target, duration = 2000) {
+            let current = 0;
+            const increment = target / (duration / 16);
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target + (target >= 1000 ? '+' : '%');
+                    clearInterval(timer);
+                } else {
+                    if (target >= 1000) {
+                        element.textContent = Math.floor(current).toLocaleString() + '+';
+                    } else {
+                        element.textContent = Math.floor(current) + '%';
+                    }
+                }
+            }, 16);
+        }
+
+        // Trigger counter animation when stats section is in view
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statNumbers = entry.target.querySelectorAll('.stat-number');
+                    statNumbers.forEach(stat => {
+                        const text = stat.textContent;
+                        const value = parseInt(text.replace(/[^0-9]/g, ''));
+                        animateCounter(stat, value);
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        const statsSection = document.querySelector('.stats-section');
+        if (statsSection) {
+            observer.observe(statsSection);
+        }
+
+        // Add loading animation to page
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '0';
+            setTimeout(() => {
+                document.body.style.transition = 'opacity 0.5s ease-in';
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+
+        // Console security message
+        console.log('%c⚠️ SECURITY WARNING', 'color: #e63946; font-size: 24px; font-weight: bold;');
+        console.log('%cThis is a browser feature intended for developers. If someone told you to copy-paste something here, it is likely a scam and may compromise your security.', 'font-size: 14px;');
+        console.log('%c🛡️ Stay Safe Online - Cyber Defence Intelligence', 'color: #00b4d8; font-size: 16px; font-weight: bold;');
+    </script>
+</body>
+</html>
